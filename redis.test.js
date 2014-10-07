@@ -2193,6 +2193,12 @@ tests.unref = function () {
     }, 500);
 };*/
 
+tests.config = function() {
+  assert.doesNotThrow(function() {
+    client.config('notify-keyspace-events', 'KEA');
+  });
+};
+
 all_tests = Object.keys(tests);
 all_start = new Date();
 test_count = 0;
@@ -2260,4 +2266,3 @@ process.on('exit', function (code) {
     // MODIF TODO FIX
     // assert.equal(true, ended);
 });
-
